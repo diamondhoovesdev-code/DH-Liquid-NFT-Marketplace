@@ -13,59 +13,34 @@
     <style>
         body {
             margin: 0;
-            padding: 0;
+            padding: 20px;
             min-height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
             background: #1a1a1a;
-        }
-        #debug {
-            position: fixed;
-            top: 10px;
-            right: 10px;
-            background: white;
-            padding: 10px;
-            border-radius: 5px;
-            font-size: 12px;
         }
     </style>
 </head>
 <body>
-    <div id="debug">Loading...</div>
     <div id="token-swap-container"></div>
     
     <script>
-        // Debug script loading
-        document.getElementById('debug').innerHTML = 'Scripts loaded. Checking widget...';
-        
-        setTimeout(function() {
-            if (typeof renderTokenSwap !== 'undefined') {
-                document.getElementById('debug').innerHTML = 'Widget found! Rendering...';
-                
-                renderTokenSwap('token-swap-container', {
-                    partnerCode: '3141836631',
-                    theme: 'dark',
-                    background: 'ffbe6e',
-                    textColor: 'fdfdfd',
-                    buttonColor: 'be6eff',
-                    buttonTextColor: 'fdfdfd',
-                    containersColor: '6effbe',
-                    containersTextColor: '333333',
-                    showHistory: true,
-                    showProject: true,
-                    showFooter: true,
-                    onSwapFailure: (error) => console.error(error),
-                    onSwapSuccess: (txHash) => console.log(txHash),
-                    onWalletConnected: (wallet) => console.log(wallet),
-                    onWalletDisconnected: () => console.log('Wallet disconnected'),
-                    onWalletConnectedError: (error) => console.error(error)
-                });
-            } else {
-                document.getElementById('debug').innerHTML = 'ERROR: Widget script did not load!';
-                document.getElementById('token-swap-container').innerHTML = '<p style="color: white; padding: 20px;">The widget script from Railway.app failed to load. Please contact the widget provider.</p>';
-            }
-        }, 2000);
+        renderTokenSwap('token-swap-container', {
+            partnerCode: '3141836631',
+            theme: 'dark',
+            background: 'ffbe6e',
+            textColor: 'fdfdfd',
+            buttonColor: 'be6eff',
+            buttonTextColor: 'fdfdfd',
+            containersColor: '6effbe',
+            containersTextColor: '333333',
+            showHistory: true,
+            showProject: true,
+            showFooter: true,
+            onSwapFailure: (error) => console.error(error),
+            onSwapSuccess: (txHash) => console.log(txHash),
+            onWalletConnected: (wallet) => console.log(wallet),
+            onWalletDisconnected: () => console.log('Wallet disconnected'),
+            onWalletConnectedError: (error) => console.error(error)
+        });
     </script>
 </body>
 </html>
