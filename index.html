@@ -15,7 +15,19 @@
             margin: 0;
             padding: 20px;
             min-height: 100vh;
-            background: #1a1a1a;
+            background-image: url('https://raw.githubusercontent.com/diamondhoovesdev-code/DH-Liquid-NFT-Marketplace/main/landing%20page%201.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        #token-swap-container {
+            max-width: 500px;
+            width: 100%;
         }
     </style>
 </head>
@@ -26,12 +38,12 @@
         renderTokenSwap('token-swap-container', {
             partnerCode: '3141836631',
             theme: 'dark',
-            background: 'ffbe6e',
-            textColor: 'fdfdfd',
-            buttonColor: 'be6eff',
-            buttonTextColor: 'fdfdfd',
-            containersColor: '6effbe',
-            containersTextColor: '333333',
+            background: '1a2332',           // Dark blue-grey to match the background
+            textColor: 'e0e6ed',            // Light grey/white text
+            buttonColor: 'd946ef',          // Purple/magenta for buttons (matches helmet accent)
+            buttonTextColor: 'ffffff',      // White button text
+            containersColor: '2a3f5f',      // Darker blue for containers
+            containersTextColor: 'e0e6ed',  // Light text on containers
             showHistory: true,
             showProject: true,
             showFooter: true,
