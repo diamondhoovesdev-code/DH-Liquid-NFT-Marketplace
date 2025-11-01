@@ -34,6 +34,19 @@
             align-items: center;
             padding: 20px;
         }
+
+        /* Add this to your <style> section temporarily */
+body::before {
+    content: '';
+    position: fixed;
+    left: 50%;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: red;
+    z-index: 9999;
+    pointer-events: none;
+}
         
         #token-swap-container {
             max-width: 500px;
